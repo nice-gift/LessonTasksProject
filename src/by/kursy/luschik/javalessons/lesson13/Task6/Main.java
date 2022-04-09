@@ -24,7 +24,7 @@ public class Main {
         int result = LinSearching.findSecondValue(array, value);
 
         Printer.print("\nArray: " + Convertor.convertFromArrayToString(array));
-        String msg = String.format("Second index of value %d=%d",value,result );
+        String msg = String.format("Second index of value %d = %d", value, result);
         Printer.print("\n" + msg);
     }
 }
