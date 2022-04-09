@@ -15,13 +15,24 @@ public class LinearSearching {
 //}
 
     public static boolean checkValue(int[] array, int value) {
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] == value) {
+        for (int element: array) {
+            if (element == value) {
                 return true;
             }
         }
         return false;
     }
+//
+//    public static boolean checkValue(int[] array, int value) {
+//        for (int i = 0; i < array.length; i++) {
+//            if (array[i] == value) {
+//                return true;
+//            }
+//        }
+//        return false;
+//    }
+
+
 
 
     public static int findFirstIndex(int[] array, int value) {
