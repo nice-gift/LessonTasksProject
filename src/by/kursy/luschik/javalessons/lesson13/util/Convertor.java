@@ -5,7 +5,7 @@ public class Convertor {
         StringBuilder builder = new StringBuilder();
         for (int element: array
              ) {
-            builder.append(element).append(" ")
+            builder.append(element).append(" ");
         }
     return builder+"";
     }
