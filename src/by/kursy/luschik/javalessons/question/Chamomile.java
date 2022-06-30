@@ -6,8 +6,9 @@ public class Chamomile extends Flower {
     @Override
     public boolean equals(Object o) {
 
-//      Можно ли опустить следующие 2 строчки, они же проверяются у родителя?
         if (this == o) return true;
+
+//      Можно ли опустить следующую строчку, она же проверяется у родителя?
         if (o == null || getClass() != o.getClass()) return false;
 
 
