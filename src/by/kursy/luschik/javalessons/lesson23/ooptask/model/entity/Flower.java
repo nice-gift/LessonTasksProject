@@ -17,7 +17,8 @@ public class Flower {
     }
 
     // constructor with params #1
-    public Flower(String name, String color, double price, double weight, int length) {
+    public Flower(String name, String color, double price, double weight,
+                  int length) {
         this.name = name;
         this.color = color;
         this.price = price;
@@ -33,7 +34,8 @@ public class Flower {
 
     // copy-constructor
     public Flower(Flower flower) {
-        this(flower.name, flower.color, flower.price, flower.weight, flower.length);
+        this(flower.name, flower.color, flower.price, flower.weight,
+                flower.length);
     }
 
     public String getName() {

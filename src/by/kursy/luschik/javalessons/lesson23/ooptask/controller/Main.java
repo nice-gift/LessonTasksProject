@@ -3,6 +3,7 @@ package by.kursy.luschik.javalessons.lesson23.ooptask.controller;
 import by.kursy.luschik.javalessons.lesson23.ooptask.model.entity.*;
 import by.kursy.luschik.javalessons.lesson23.ooptask.model.logic.ShopAssistance;
 
+
 public class Main {
     public static void main(String[] args) {
 
