@@ -1,5 +1,8 @@
 package by.kursy.luschik.javalessons.lesson18.ooptask.model.entity;
 
+import by.kursy.luschik.javalessons.lesson18.ooptask.model.exception.FlowerPriceWrongException;
+import by.kursy.luschik.javalessons.lesson18.ooptask.model.exception.FlowerProjectException;
+
 public class Flower {
     private String name;
     private String color;
@@ -56,9 +59,11 @@ public class Flower {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(double price) throws FlowerPriceWrongException {
         if (price > 0) {
             this.price = price;
+        } else {
+            throw new FlowerPriceWrongException();
         }
     }
 
