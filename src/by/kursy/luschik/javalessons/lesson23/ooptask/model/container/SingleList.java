@@ -96,7 +96,6 @@ public class SingleList extends AbstractContainer{
                 FlowerNode previous = temp;
                 temp = temp.next;
                 previous.next = temp.next;
-                break;
             }
 
             temp = temp.next;
