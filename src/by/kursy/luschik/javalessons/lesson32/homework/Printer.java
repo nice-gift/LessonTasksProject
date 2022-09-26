@@ -2,9 +2,9 @@ package by.kursy.luschik.javalessons.lesson32.homework;
 
 public class Printer {
     public static void print(String text) {
-        System.out.println("[");
+        System.out.print("[");
         for (int i = 0; i < text.length(); i++) {
-            System.out.println(text.charAt(i));
+            System.out.print(text.charAt(i));
 
             try {
                 Thread.sleep(1000);
