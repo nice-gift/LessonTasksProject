@@ -6,14 +6,11 @@ public class Main2 {
     public static void main(String[] args) {
         ArrayList<Thread> treads = new ArrayList<>();
 
-        treads.add(new Thread(new WriterThread("kek")));
-        treads.add(new Thread(new WriterThread("kewk")));
-        treads.add(new Thread(new WriterThread("keek")));
-        treads.add(new Thread(new WriterThread("kerk")));
-        treads.add(new Thread(new WriterThread("ketk")));
-        treads.add(new Thread(new WriterThread("keyk")));
-        treads.add(new Thread(new WriterThread("keuk")));
-
+        treads.add(new Thread(new WriterThread("print this1")));
+        treads.add(new Thread(new WriterThread("print this2")));
+        treads.add(new Thread(new WriterThread("print this3")));
+        treads.add(new Thread(new WriterThread("print this4")));
+        treads.add(new Thread(new WriterThread("print this5")));
 
         treads.get(0).start();
 
