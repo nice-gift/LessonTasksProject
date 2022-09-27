@@ -1,5 +1,7 @@
 package by.kursy.luschik.javalessons.lesson32.homework;
 
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
         WriterThread writerThread1 = new WriterThread("Writer Thread1");
