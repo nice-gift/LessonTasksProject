@@ -4,29 +4,10 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        WriterThread writerThread1 = new WriterThread("Writer Thread1");
-        Thread thread1 = new Thread(writerThread1);
-        thread1.start();
+        ArrayList<WriterThread> treads = new ArrayList<>();
 
-        WriterThread writerThread2 = new WriterThread("Writer Thread2");
-        Thread thread2 = new Thread(writerThread2);
-
-        try {
-            thread1.join();
-            thread2.start();
-        } catch (InterruptedException e) {
-            System.err.println(e);
-        }
-
-        try {
-            thread1.join();
-            thread2.join();
-        } catch (InterruptedException e) {
-            System.err.println(e);
-        }
-
-        String text = "Main thread";
-
-        Printer.print(text);
+        treads.add(new WriterThread("print this1"));
+        treads.add(new WriterThread("print this2"));
+        
     }
 }
