@@ -4,10 +4,12 @@ package by.kursy.luschik.javalessons.lesson32.homework;
 public class WriterThread implements Runnable {
     private Thread thread;
     private String text;
+    private Object object;
 
-    public WriterThread(String text) {
+    public WriterThread(String text, Object object) {
         thread = new Thread(this);
         this.text = text;
+        this.object = object;
         thread.start();
     }
 
@@ -21,6 +23,8 @@ public class WriterThread implements Runnable {
 
     @Override
     public void run() {
-        Printer.print(text);
+        synchronized (object) {
+            Printer.print(text);
+        }
     }
 }
