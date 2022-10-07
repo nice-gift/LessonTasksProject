@@ -16,5 +16,7 @@ public class Ship {
         this.numOfContainers = numOfContainers;
     }
 
-
+    public Ship(Ship ship) {
+        this(ship.name, ship.numOfContainers);
+    }
 }

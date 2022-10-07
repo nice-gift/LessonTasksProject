@@ -18,4 +18,8 @@ public class Dock {
         this.numOfContainers = numOfContainers;
         this.ready = ready;
     }
+
+    public Dock(Dock dock) {
+        this(dock.id, dock.numOfContainers, dock.ready);
+    }
 }
