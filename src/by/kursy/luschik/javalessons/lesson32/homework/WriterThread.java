@@ -2,26 +2,29 @@
 package by.kursy.luschik.javalessons.lesson32.homework;
 
 public class WriterThread implements Runnable {
+    private Thread thread;
     private String text;
+    private Object object;
 
-    public WriterThread() {
-        text = "";
+    public WriterThread(String text, Object object) {
+        thread = new Thread(this);
+        this.text = text;
+        this.object = object;
+        thread.start();
     }
 
-    public WriterThread(String text) {
-        this.text = text;
+    public Thread getThread() {
+        return thread;
     }
 
     public void setText(String text) {
         this.text = text;
     }
 
-    public String getText() {
-        return text;
-    }
-
     @Override
     public void run() {
-        Printer.print(text);
+        synchronized (object) {
+            Printer.print(text);
+        }
     }
 }
