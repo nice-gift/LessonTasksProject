@@ -1,25 +1,39 @@
 package by.kursy.luschik.javalessons.stage30.model.entity;
 
+import by.kursy.luschik.javalessons.stage30.model.exception.DockIdWrongException;
+import by.kursy.luschik.javalessons.stage30.model.exception.DockNumOfContainersWrongException;
+import by.kursy.luschik.javalessons.stage30.model.exception.LogicalProjectException;
+
 public class Dock {
     public static final int MAX_DOCK_CONTAINER_CAPACITY = 10;
 
     private int id;
     private int numOfContainers;
-    private boolean ready;
 
-    public Dock() {
-        id = 0;
-        numOfContainers = 0;
-        ready = false;
+    public Dock(int id, int numOfContainers) throws LogicalProjectException {
+        if (id >= 0) {
+            this.id = id;
+        } else throw new DockIdWrongException();
+
+        if (numOfContainers >= 0 && numOfContainers <= MAX_DOCK_CONTAINER_CAPACITY) {
+            this.numOfContainers = numOfContainers;
+        } else throw new DockNumOfContainersWrongException();
     }
 
-    public Dock(int id, int numOfContainers, boolean ready) {
-        this.id = id;
-        this.numOfContainers = numOfContainers;
-        this.ready = ready;
+    public int getNumOfContainers() {
+        return numOfContainers;
     }
 
-    public Dock(Dock dock) {
-        this(dock.id, dock.numOfContainers, dock.ready);
+    public void addContainer() {
+        numOfContainers++;
+    }
+
+    public void removeContainer() {
+        numOfContainers--;
+    }
+
+    @Override
+    public String toString() {
+        return "id = " + id + ", numOfContainers = " + numOfContainers;
     }
 }
