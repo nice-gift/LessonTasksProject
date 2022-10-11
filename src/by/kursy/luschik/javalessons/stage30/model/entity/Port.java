@@ -22,14 +22,19 @@ public class Port implements Iterable<Dock> {
     }
 
     public Dock get(int index) {
-        int count = 0;
-        while (iterator().hasNext()) {
-            count++;
-            if (count == index) {
-                break;
+        Dock value = null;
+        if (index >= 0 && index < docks.size()) {
+            int count = 0;
+            for (Dock dock : docks
+            ) {
+                if (count == index) {
+                    value = dock;
+                    break;
+                }
+                count++;
             }
         }
-        return iterator().next();
+        return value;
     }
 
     @Override

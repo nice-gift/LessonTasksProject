@@ -20,8 +20,10 @@ public class Main {
         port.add(new Dock(2, 5));
 
         Loader.download(ships.get(0), port.get(0));
-        System.out.println(port);
+        Loader.unload(ships.get(1),port.get(1));
+
         System.out.println(ships);
+        System.out.println(port);
     }
 }
 
