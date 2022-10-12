@@ -18,11 +18,6 @@ public class Consumer implements Runnable {
     public void run() {
         while (running) {
             market.get();
-            try {
-                TimeUnit.MILLISECONDS.sleep(500);
-            } catch (InterruptedException e) {
-                System.err.println(e);
-            }
         }
     }
 
