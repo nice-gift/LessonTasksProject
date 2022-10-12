@@ -4,13 +4,11 @@ public class Writer implements Runnable {
     private Thread thread;
     private String text;
     private Printer printer;
-    private Object object;
 
-    public Writer(String text, Printer printer, Object object) {
+    public Writer(String text, Printer printer) {
         thread = new Thread(this);
         this.text = text;
         this.printer = printer;
-        this.object = object;
         thread.start();
     }
 
@@ -20,8 +18,8 @@ public class Writer implements Runnable {
 
     @Override
     public void run() {
-        synchronized (object) {
+//        synchronized (object) {
             printer.print(text);
-        }
+//        }
     }
 }
