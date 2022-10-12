@@ -2,6 +2,8 @@ package by.kursy.luschik.javalessons.lesson34.model.logic;
 
 import by.kursy.luschik.javalessons.lesson34.model.entity.Market;
 
+import java.util.concurrent.TimeUnit;
+
 public class Consumer implements Runnable {
     private boolean running;
     private Market market;
@@ -16,6 +18,11 @@ public class Consumer implements Runnable {
     public void run() {
         while (running) {
             market.get();
+            try {
+                TimeUnit.MILLISECONDS.sleep(500);
+            } catch (InterruptedException e) {
+                System.err.println(e);
+            }
         }
     }
 
