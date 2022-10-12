@@ -1,5 +1,7 @@
 package by.kursy.luschik.javalessons.lesson33.model;
 
+import java.util.concurrent.TimeUnit;
+
 public class Writer implements Runnable {
     private Thread thread;
     private String text;
@@ -18,8 +20,24 @@ public class Writer implements Runnable {
 
     @Override
     public void run() {
-//        synchronized (object) {
-            printer.print(text);
-//        }
+        int count = 0;
+        while (true) {
+            if (printer.getLock().tryLock()) {
+                try {
+                    printer.print(text);
+                    System.out.printf("\n %s-thread: count = %d\n", text, count);
+                    break;
+                } finally {
+                    printer.getLock().unlock();
+                }
+            } else {
+                count++;
+                try {
+                    TimeUnit.MILLISECONDS.sleep(100);
+                } catch (InterruptedException e) {
+                    System.err.println(e);
+                }
+            }
+        }
     }
 }
