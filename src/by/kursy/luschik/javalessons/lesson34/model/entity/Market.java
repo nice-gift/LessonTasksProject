@@ -8,6 +8,10 @@ public class Market {
         empty = true;
     }
 
+    public synchronized boolean isEmpty(){
+        return empty;
+    }
+
     public synchronized void send(int product) {
         if (empty) {
             this.product = product;
